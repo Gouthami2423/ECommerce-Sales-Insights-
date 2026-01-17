@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sales Analytics Dashboard</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header class="header">
+    <h1>Sales Analytics Dashboard</h1>
+    <p class="subtitle">
+        Discover patterns, track performance, and make data-driven decisions
+    </p>
+</header>
+
+<div class="filter-section">
+    <input type="date">
+    <input type="date">
+    <button id="generateBtn" type="button">Generate</button>
+</div>
+
+<div class="dashboard">
+
+    <div class="chart-card">
+        <h3>Monthly Sales Trend</h3>
+        <canvas id="salesTrend"></canvas>
+    </div>
+
+    <div class="chart-card">
+        <h3>Category Sales</h3>
+        <canvas id="categoryChart"></canvas>
+    </div>
+
+    <div class="chart-card">
+        <h3>Product Performance</h3>
+        <canvas id="productChart"></canvas>
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
