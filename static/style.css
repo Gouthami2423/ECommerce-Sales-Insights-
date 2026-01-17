@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f4f8;
+    color: #333;
+}
+
+.header {
+    text-align: center;
+    background: linear-gradient(90deg, #4b6cb7, #182848);
+    color: white;
+    padding: 18px 10px 22px;
+}
+
+.header h1 {
+    font-size: 28px;
+}
+
+.subtitle {
+    margin-top: 8px;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.filter-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 0 20px;
+}
+
+.filter-section input {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.filter-section button {
+    padding: 8px 22px;
+    background: #e91e63;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+
+    transition: background 0.3s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.filter-section button:hover {
+    background: #c2185b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(233,30,99,0.4);
+}
+
+.dashboard {
+    height: calc(100vh - 180px);
+    padding: 0 20px 20px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.chart-card {
+    background: white;
+    border-radius: 14px;
+    padding: 15px;
+
+    display: flex;
+    flex-direction: column;
+
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+
+    animation: fadeUp 0.6s ease forwards;
+}
+
+.chart-card h3 {
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.chart-card:hover,
+.chart-card:focus-within {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 14px 30px rgba(75,108,183,0.28);
+}
+
+.chart-card canvas {
+    width: 100% !important;
+    height: 260px !important;
+    cursor: pointer;
+    outline: none;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1024px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .chart-card canvas {
+        height: 220px !important;
+    }
+}
